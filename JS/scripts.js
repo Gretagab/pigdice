@@ -1,19 +1,24 @@
 
 //business logic
+var globalScore = 0;
+
 function rollDice()  {
   //var newDice = [1, 2, 3, 4, 5, 6];
   var x = Math.floor((Math.random() * 6)+1);
   console.log(x);
-  var initialScore = 2;
+  var initialScore = 0;
   if (x > 1) {
     initialScore = initialScore + x;
+    globalScore += initialScore;
+    console.log(globalScore);
   }
   else {
     alert ("You lost your turn");
+    globalScore = initialScore;
   }
 
 
-console.log(initialScore);
+
 }
 
 
